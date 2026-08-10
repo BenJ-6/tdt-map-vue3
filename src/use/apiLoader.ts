@@ -2,7 +2,7 @@ export const DEFAULT_CONFIG = {
   v: "4.0",
   tk: "",
   plugins: [],
-  plusDomain: "https://lbs.tianditu.gov.cn"
+  plugDomain: "https://lbs.tianditu.gov.cn"
 };
 
 export const PLUGINS_URL = {
@@ -21,7 +21,7 @@ export interface LoadConfig {
   v?: string;
   tk?: string;
   plugins?: (keyof typeof PLUGINS_URL)[];
-  plusDomain?: string;
+  plugDomain?: string;
 }
 
 let isLoading = false;
@@ -34,7 +34,7 @@ export async function useApiLoader(config: LoadConfig = {}) {
     return;
   } else {
     isLoading = true;
-    const { v, tk, plugins, plusDomain } = { ...DEFAULT_CONFIG, ...config };
+    const { v, tk, plugins, plugDomain } = { ...DEFAULT_CONFIG, ...config };
     await loadScript(`https://api.tianditu.gov.cn/api?v=${v}&tk=${tk}`);
     await Promise.all(
       plugins
@@ -42,7 +42,7 @@ export async function useApiLoader(config: LoadConfig = {}) {
         .flat()
         .map(url => {
           //url是否完整
-          if (url.indexOf("http") < 0) url = plusDomain + url;
+          if (url.indexOf("http") < 0) url = plugDomain + url;
           loadScript(url);
         })
     );

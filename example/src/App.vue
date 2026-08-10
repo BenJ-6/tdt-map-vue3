@@ -6,7 +6,7 @@
     <TdtMap
       :center="state.center"
       :controls="['Zoom', 'MapType']"
-      :load-config="{ tk: '821dea15026e59e7a206977b250bdae1', plugins: ['D3', 'CarTrack'], plusDomain: '' }"
+      :load-config="{ tk: '821dea15026e59e7a206977b250bdae1', plugins: ['D3', 'CarTrack'], plugDomain: '' }"
       :zoom="state.zoom"
     >
       <TdtMarker
