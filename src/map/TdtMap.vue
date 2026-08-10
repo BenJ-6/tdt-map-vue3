@@ -13,6 +13,8 @@ import { useApiLoader } from "../use/apiLoader";
 import { useEvent } from "../use/event";
 import { EVENTS, NATIVE_EVENTS, PROPS, useControls, useInit, useWatch } from "./use";
 
+defineOptions({ name: "TdtMap" });
+
 const props = defineProps(PROPS);
 const emit = defineEmits(EVENTS);
 

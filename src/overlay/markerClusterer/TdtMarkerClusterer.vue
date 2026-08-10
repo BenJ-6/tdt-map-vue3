@@ -4,6 +4,8 @@ import { useMapRoot } from "../../use/mapRoot";
 import { useEvent } from "../../use/event";
 import { NATIVE_EVENTS, PROPS, useInit, useWatch } from "./use";
 
+defineOptions({ name: "TdtMarkerClusterer" });
+
 const props = defineProps(PROPS as any);
 const emit = defineEmits([
   "init",

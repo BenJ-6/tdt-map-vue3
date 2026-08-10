@@ -41,8 +41,10 @@ export async function useApiLoader(config: LoadConfig = {}) {
         .map((name: keyof typeof PLUGINS_URL) => PLUGINS_URL[name])
         .flat()
         .map(url => {
-          //url是否完整
-          if (url.indexOf("http") < 0) url = plugDomain + url;
+          let domainUrl = DEFAULT_CONFIG.plugDomain;
+          if (plugDomain) domainUrl = plugDomain;
+          //仅设置需要设置的url
+          if (url.indexOf("http") < 0) url = domainUrl + url;
           loadScript(url);
         })
     );

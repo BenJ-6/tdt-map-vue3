@@ -17,6 +17,8 @@ import { computed } from "vue";
 import { useState } from "../use";
 import "../styles/route-types.scss";
 
+defineOptions({ name: "RouteTypes" });
+
 const state = useState();
 const routeTypes = { 0: "驾车", 1: "公交", 2: "步行" };
 const routeTypesEntries = computed(() =>

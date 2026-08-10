@@ -6,6 +6,8 @@ import type { ToolInstances } from "./types";
 import { useMapRoot } from "../use/mapRoot";
 import { EVENTS, PROPS, useEvent, useInit, useWatch } from "./use";
 
+defineOptions({ name: "TdtMousetool" });
+
 const props = defineProps(PROPS);
 const emit = defineEmits(EVENTS);
 

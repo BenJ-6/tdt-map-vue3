@@ -6,7 +6,7 @@
   <button @click="state.Datas = []" class="demo-button">clear</button>
   <div class="mapDiv">
     <tdt-map :center="state.center" :zoom="state.zoom">
-      <tdt-car-track ref="carTrack" :Datas="state.Datas" :interval="5" :speed="10"></tdt-car-track>
+      <tdt-car-track ref="carTrack" :Datas="state.Datas" :interval="5" :speed="500" :loop="false"></tdt-car-track>
     </tdt-map>
   </div>
 </template>

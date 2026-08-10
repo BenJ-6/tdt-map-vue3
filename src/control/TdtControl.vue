@@ -10,6 +10,8 @@ import { useEvent } from "../use/event";
 import { useMapRoot } from "../use/mapRoot";
 import { EVENTS, NATIVE_EVENTS, PROPS, useInit, useWatch } from "./use";
 
+defineOptions({ name: "TdtControl" });
+
 const props = defineProps(PROPS);
 const emit = defineEmits(EVENTS);
 

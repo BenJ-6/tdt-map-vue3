@@ -22,6 +22,8 @@ import { ref } from "vue";
 import { IconClose } from "./icons";
 import "../styles/search-box.scss";
 
+defineOptions({ name: "SearchBox" });
+
 defineProps<{
   /** 显示在输入框的提示 */
   placeholder?: string;

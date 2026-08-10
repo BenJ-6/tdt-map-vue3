@@ -19,6 +19,8 @@ import RouteTypes from "./components/RouteTypes.vue";
 import "../../styles/tdt-icon.scss";
 import "./styles/tdt-route.scss";
 
+defineOptions({ name: "TdtRoute" });
+
 const state = useState();
 provide("routeState", state);
 

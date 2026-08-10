@@ -84,5 +84,7 @@ import endPng from "../styles/end.png";
 import mapBusPng from "../styles/map_bus.png";
 import mapMetroPng from "../styles/map_metro.png";
 
+defineOptions({ name: "RouteMapView" });
+
 const state = useState();
 </script>

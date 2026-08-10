@@ -6,6 +6,8 @@ import { useMapRoot } from "../../use/mapRoot";
 import { useEvent } from "../../use/event";
 import { EVENTS, NATIVE_EVENTS, PROPS, useInit, useWatch } from "./use";
 
+defineOptions({ name: "TdtGridlineLayer" });
+
 const props = defineProps(PROPS);
 const emit = defineEmits(EVENTS);
 

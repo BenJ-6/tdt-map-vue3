@@ -2,11 +2,15 @@
   <div class="map-container">
     <button @click="openTool('markTool')">标点</button>
     <button @click="showPlayTrack = true">插入轨迹</button>
-    <button @click="playCarTrack()">播放</button>
+    <button @click="playCarTrack()" v-if="showPlayTrack">播放</button>
     <TdtMap
       :center="state.center"
       :controls="['Zoom', 'MapType']"
-      :load-config="{ tk: '821dea15026e59e7a206977b250bdae1', plugins: ['D3', 'CarTrack'], plugDomain: '' }"
+      :load-config="{
+        tk: '821dea15026e59e7a206977b250bdae1',
+        plugins: ['D3', 'CarTrack'],
+        plugDomain: 'https://api.junsor.net'
+      }"
       :zoom="state.zoom"
     >
       <TdtMarker
@@ -32,7 +36,7 @@
         :close-on-click="true"
         :content="state.infowindow.content"
       ></TdtInfowindow>
-      <TdtMousetool ref="mousetoolRef" :mark-tool="{ follow: true }"></TdtMousetool>
+      <TdtMousetool v-if="showMousetool" ref="mousetoolRef" :mark-tool="{ follow: true }"></TdtMousetool>
       <TdtControl position="topleft">
         <TdtSearch></TdtSearch>
       </TdtControl>
@@ -108,7 +112,9 @@ function openInfoWindow(e: any) {
 
 const mousetoolRef = ref();
 
+const showMousetool = ref(false);
 function openTool(toolName: string) {
+  showMousetool.value = true;
   mousetoolRef.value?.open(toolName);
 }
 

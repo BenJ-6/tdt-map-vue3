@@ -51,6 +51,8 @@ import TdtRoute from "../route/TdtRoute.vue";
 import "./styles/tdt-search.scss";
 import "../../styles/tdt-icon.scss";
 
+defineOptions({ name: "TdtSearch" });
+
 withDefaults(
   defineProps<{
     placeholder?: string;

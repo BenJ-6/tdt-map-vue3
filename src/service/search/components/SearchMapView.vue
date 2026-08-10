@@ -24,6 +24,8 @@ import { toLngLats, toLonLatNumberArray } from "~/utils/converter";
 import { useMapRoot } from "~/use/mapRoot";
 import type { LngLat } from "~/utils/types";
 
+defineOptions({ name: "SearchMapView" });
+
 const props = withDefaults(
   defineProps<{
     /** 显示在地图上的点数组 */

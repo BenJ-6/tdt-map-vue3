@@ -27,6 +27,8 @@
 import { useState } from "../use";
 import "../styles/route-plans.scss";
 
+defineOptions({ name: "RoutePlans" });
+
 const state = useState();
 
 function transitPlanText(plan: any): string {

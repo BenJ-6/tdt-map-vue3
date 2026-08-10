@@ -3,6 +3,8 @@ import { onBeforeMount, onUnmounted, watch } from "vue";
 import { useMapRoot } from "../../use/mapRoot";
 import { EVENTS, PROPS, useInit } from "./use";
 
+defineOptions({ name: "TdtCarTrack" });
+
 const props = defineProps(PROPS);
 const emit = defineEmits(EVENTS);
 

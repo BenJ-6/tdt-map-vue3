@@ -9,8 +9,8 @@ export default {
   enhanceApp({ app }) {
     app.use(install, {
       v: "4.0",
-      tk: "7f013d0186775b063d6a046977bbefc6",
-      plugins: ["CarTrack"]
+      tk: "821dea15026e59e7a206977b250bdae1",
+      plugins: ["D3", "CarTrack"]
     });
     app.use(components);
   }

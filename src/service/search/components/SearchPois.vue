@@ -16,6 +16,8 @@ import { computed } from "vue";
 import SearchPage from "./SearchPage.vue";
 import "../styles/search-pois.scss";
 
+defineOptions({ name: "SearchPois" });
+
 export interface PageProps {
   current?: number;
   size?: number;

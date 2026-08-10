@@ -33,6 +33,8 @@ import SearchBox from "~/service/search/components/SearchBox.vue";
 import SearchPois from "~/service/search/components/SearchPois.vue";
 import { useMethods, useState } from "../use";
 
+defineOptions({ name: "RouteSearch" });
+
 const state = useState();
 const { onSearch, onPoiClick, onPageChange } = useMethods(state);
 </script>

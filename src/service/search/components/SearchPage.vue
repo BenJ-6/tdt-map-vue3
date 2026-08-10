@@ -14,6 +14,8 @@
 import { computed } from "vue";
 import "../styles/search-page.scss";
 
+defineOptions({ name: "SearchPage" });
+
 const props = withDefaults(
   defineProps<{
     /** 当前页码 */

@@ -32,6 +32,8 @@ import { computed } from "vue";
 import { useState } from "../use";
 import "../styles/route-policies.scss";
 
+defineOptions({ name: "RoutePolicies" });
+
 const state = useState();
 const drivingPolicies = { 0: "最少时间", 1: "最短距离", 2: "避开高速" };
 const transitPolicies = { 1: "最少时间", 2: "最少换乘", 4: "最少步行", 8: "不乘地铁" };

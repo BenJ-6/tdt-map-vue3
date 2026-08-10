@@ -10,6 +10,8 @@
 <script setup lang="ts">
 import "../styles/search-suggests.scss";
 
+defineOptions({ name: "SearchSuggests" });
+
 withDefaults(
   defineProps<{
     /** 搜索建议数组 */
