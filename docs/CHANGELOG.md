@@ -1,3 +1,7 @@
+## <small>2.0.6 (2026-08-10)</small>
+
+* fix(组件定义): 修复组件未导出问题 ([7a272be](https://github.com/18673107372/tdt-map-vue3/commit/7a272be))
+* fix(docs): 优化文档 ([9045bdd](https://github.com/18673107372/tdt-map-vue3/commit/9045bdd))
 ## <small>2.0.5 (2026-08-10)</small>
 
 * fix(docs): 增加初始化参数描述 ([7cbc6f1](https://github.com/18673107372/tdt-map-vue3/commit/7cbc6f1))
