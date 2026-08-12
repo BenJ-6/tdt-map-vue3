@@ -10,12 +10,14 @@
   "module": "dist/es/index.mjs",
   "types": "dist/es/index.d.ts",
   "keywords": [
-    "vue",
+    "vue3",
     "tianditu",
+    "element",
     "map",
     "skymap",
     "tianmap",
-    "天地图"
+    "天地图",
+    "天地图组件"
   ],
   "files": [
     "dist",
