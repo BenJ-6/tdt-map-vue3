@@ -10,7 +10,8 @@ export default {
     app.use(install, {
       v: "4.0",
       tk: "821dea15026e59e7a206977b250bdae1",
-      plugins: ["D3", "CarTrack"]
+      plugins: ["D3", "CarTrack"],
+      plugDomain: "https://api.junsor.net"
     });
     app.use(components);
   }
