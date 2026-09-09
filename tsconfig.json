@@ -9,10 +9,7 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "forceConsistentCasingInFileNames": true, // 👈 加上这一行
-    "types": [
-      "tianditu-types"
-    ]
+    "forceConsistentCasingInFileNames": true // 👈 加上这一行
   },
   "files": [],
   "references": [
