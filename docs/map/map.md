@@ -49,7 +49,7 @@
 | moveend       | ({type,targe})                        | 地图移动结束时触发此事件                                              |
 | zoomstart     | ({type,targe})                        | 地图更改缩放级别开始时触发触发此事件                                        |
 | zoomend       | ({type,targe})                        | 地图更改缩放级别结束时触发触发此事件                                        |
-| addoverlay    | ({type,target,addoverlay})            | 当使用 Map.addOverlay()方法向地图中添加单个覆盖物时会触发此事件                  |
+| addoverlay    | ({type,target,addoverlay})            | 当使用 Map.addOverLay()方法向地图中添加单个覆盖物时会触发此事件                  |
 | removeoverlay | ({type,target,removeoverlay})         | 当使用 Map.removeOverlay()方法移除单个覆盖物时会触发此事件                   |
 | addcontrol    | ({type,target,addcontrol})            | 当使用 Map.addControl()方法向地图中添加单个控件时会触发此事件                   |
 | removecontrol | ({type,target,removecontrol})         | 当使用 Map.removeControl()方法移除单个控件时会触发此事件                    |

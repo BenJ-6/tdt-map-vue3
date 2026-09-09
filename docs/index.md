@@ -195,7 +195,7 @@ import { toLngLat, toBounds, toPoint, toIcon } from "tdt-map-vue3";
   }).then(() => {
     const map = new T.Map("mapContainer", { ... });
     const marker = new T.Marker({ ... });
-    map.addOverlay(marker);
+    map.addOverLay(marker);
   });
 </script>
 ```
@@ -212,7 +212,7 @@ import { toLngLat, toBounds, toPoint, toIcon } from "tdt-map-vue3";
   function mapInit(map) {
     // 此时原生API中的T已存在window中
     const marker = new T.Marker({ ... })
-    map.addOverlay(marker);
+    map.addOverLay(marker);
   }
 </script>
 ```
