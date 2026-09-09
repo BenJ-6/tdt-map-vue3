@@ -6,12 +6,7 @@
 
 ## 说明
 
-由于原项目 [vue-tianditu](https://github.com/SoulLyoko/vue-tianditu) 长时间未更新，目前在 TypeScript 支持方面有一些问题，所以 fork 了一份，并修复了部分问题。
-
-本项目已全面重构：
-- 所有组件改为 `.vue` 单文件组件（SFC）+ `<script setup lang="ts">` 语法糖
-- 项目结构调整为标准 Vue 3 库结构（`src/` 为库源码，`example/` 为调试应用）
-- 完整的 TypeScript 类型支持
+fork自 [tdt-map-vue3](https://github.com/18673107372/tdt-map-vue3)
 
 ## 安装
 
