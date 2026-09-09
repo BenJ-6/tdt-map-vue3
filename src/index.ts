@@ -1,4 +1,4 @@
-export { install } from "./install";
+export { install as createTdtMap } from "./install";
 
 export * from "./components";
 
