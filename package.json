@@ -1,9 +1,9 @@
 {
-  "name": "tdt-map-vue3",
-  "version": "2.0.6",
+  "name": "@benj-6/tdt-map-vue3",
+  "version": "1.0.0",
   "description": "",
-  "repository": "https://github.com/18673107372/tdt-map-vue3.git",
-  "homepage": "https://github.com/18673107372/tdt-map-vue3",
+  "repository": "https://github.com/BenJ-6/tdt-map-vue3.git",
+  "homepage": "https://github.com/BenJ-6/tdt-map-vue3",
   "license": "MIT",
   "type": "module",
   "main": "dist/lib/index.js",
