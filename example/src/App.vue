@@ -1,6 +1,8 @@
 <template>
   <div class="map-container">
     <button @click="openTool('markTool')">标点</button>
+    <button @click="openTool('polylineTool')">测距</button>
+    <button @click="openTool('polygonTool')">测面积</button>
     <button @click="showPlayTrack = true">插入轨迹</button>
     <button @click="playCarTrack()" v-if="showPlayTrack">播放</button>
     <TdtMap
@@ -36,7 +38,13 @@
         :close-on-click="true"
         :content="state.infowindow.content"
       ></TdtInfowindow>
-      <TdtMousetool v-if="showMousetool" ref="mousetoolRef" :mark-tool="{ follow: true }"></TdtMousetool>
+      <TdtMousetool
+        v-if="showMousetool"
+        ref="mousetoolRef"
+        :mark-tool="{ follow: true }"
+        :polyline-tool="{ showLabel: true }"
+        :polygon-tool="{ showLabel: true }"
+      ></TdtMousetool>
       <TdtControl position="topleft">
         <TdtSearch></TdtSearch>
       </TdtControl>
@@ -52,7 +60,7 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from "vue";
+import { nextTick, reactive, ref } from "vue";
 import {
   TdtCarTrack,
   TdtCircle,
@@ -113,9 +121,10 @@ function openInfoWindow(e: any) {
 const mousetoolRef = ref();
 
 const showMousetool = ref(false);
-function openTool(toolName: string) {
+async function openTool(toolName: "markTool" | "polylineTool" | "polygonTool") {
   showMousetool.value = true;
-  mousetoolRef.value?.open(toolName);
+  await nextTick();
+  mousetoolRef.value.open(toolName);
 }
 
 const carTrackRef = ref();

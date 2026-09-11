@@ -2,14 +2,14 @@ import type { Props } from "./";
 import type { ToolInstances } from "../types";
 
 export function useInit(props: Props, tdtMap: T.Map): ToolInstances {
-  const { visible } = props;
+  const { visible, markTool, polygonTool, polylineTool, rectangleTool, circleTool, paintBrushTool } = props;
   const tools: ToolInstances = {
-    markTool: new T.MarkTool(tdtMap),
-    polygonTool: new T.PolygonTool(tdtMap),
-    polylineTool: new T.PolylineTool(tdtMap),
-    rectangleTool: new T.RectangleTool(tdtMap),
-    circleTool: new T.CircleTool(tdtMap),
-    paintBrushTool: new T.PaintBrushTool(tdtMap)
+    markTool: new T.MarkTool(tdtMap, markTool),
+    polygonTool: new T.PolygonTool(tdtMap, polygonTool),
+    polylineTool: new T.PolylineTool(tdtMap, polylineTool),
+    rectangleTool: new T.RectangleTool(tdtMap, rectangleTool),
+    circleTool: new T.CircleTool(tdtMap, circleTool),
+    paintBrushTool: new T.PaintBrushTool(tdtMap, paintBrushTool)
   };
 
   Object.values(tools).forEach(tool => {
