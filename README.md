@@ -4,6 +4,49 @@
 
 - [tdt-map-vue3 文档](https://18673107372.github.io/tdt-map-vue3/)
 
+## 项目状态
+
+本项目已弃用，不再继续维护。
+
+个人在实际使用中认为这层 Vue 组件封装收益有限，更推荐直接引入天地图官方 JS API 来使用，方式更直接、排查问题也更方便。
+
+## 推荐用法（直接加载官方 JS）
+
+```ts
+/**
+ * 按需加载天地图官方 JS API v4.0 脚本。
+ * 官方接入方式：<script src="https://api.tianditu.gov.cn/api?v=4.0&tk=密钥"></script>，
+ * 脚本加载后在全局注入 T 命名空间（new T.Map / T.LngLat 等）。
+ * 模块级缓存：整个应用只加载一次，多个地图实例共享。
+ */
+
+const SCRIPT_URL = `https://api.tianditu.gov.cn/api?v=4.0&tk=${import.meta.env.VITE_TDT_TK}`;
+
+let loadPromise: Promise<void> | null = null;
+
+/** 确保官方脚本已加载；重复调用（含并发）只发起一次真实请求 */
+export function loadTdtScript(): Promise<void> {
+  if (window.T) return Promise.resolve();
+  if (!loadPromise) {
+    loadPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = SCRIPT_URL;
+      script.type = "text/javascript";
+      script.async = true;
+      script.defer = true;
+      script.onload = () => resolve();
+      script.onerror = () => {
+        // 加载失败后允许下次进入地图页面时重新尝试
+        loadPromise = null;
+        reject(new Error("天地图 JS API 加载失败"));
+      };
+      document.body.appendChild(script);
+    });
+  }
+  return loadPromise;
+}
+```
+
 ## 说明
 
 fork自 [tdt-map-vue3](https://github.com/18673107372/tdt-map-vue3)
